@@ -1,0 +1,44 @@
+<%- include('header') %>
+
+<h1><%= title %></h1>
+
+<article class="cardsContainer one-card">
+  <h2 class="cardName"><%= card.name %></h2>
+  <div class="card-body-left">
+    <div class="card">
+      <a href="/card/<%= card.id %>">
+        <img src="/visuals/<%= card.visual_name %>" alt="<%= card.name %> illustration">
+        <p class="cardName"><%= card.name %></p>
+      </a>
+      <a class="link--addCard" title="Ajouter au deck" href="#">[ + ]</a>
+    </div>
+  </div>
+  <div class="card-body-right">
+    <div class="card-body-right-infos">
+      <span class="detail-title">Élément :</span>
+      <span class="detail-content"><%= card.element %></span>
+    </div>
+    <div class="card-body-right-infos">
+      <span class="detail-title">Level :</span>
+      <span class="detail-content"><%= card.level %></span>
+    </div>
+    <div class="card-body-right-infos">
+      <span class="detail-title">Valeur Nord :</span>
+      <span class="detail-content"><%= card.value_north %></span>
+    </div>
+    <div class="card-body-right-infos">
+      <span class="detail-title">Valeur Est :</span>
+      <span class="detail-content"><%= card.value_east %></span>
+    </div>
+    <div class="card-body-right-infos">
+      <span class="detail-title">Valeur Sud :</span>
+      <span class="detail-content"><%= card.value_south %></span>
+    </div>
+    <div class="card-body-right-infos">
+      <span class="detail-title">Valeur Ouest :</span>
+      <span class="detail-content"><%= card.value_west %></span>
+    </div>
+  </div>
+</article>
+
+<%- include('footer') %>

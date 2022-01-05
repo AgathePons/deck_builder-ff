@@ -74,6 +74,27 @@
   text-decoration: none;
 }
 
+.one-card {
+  flex-wrap: wrap;
+}
+.one-card .cardName {
+  width: 100%;
+  font-size: 2rem;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.one-card .card-body-left {
+  margin-right: 2rem;
+}
+.one-card .card-body-right {
+  flex-grow: 1;
+}
+
+.card-body-right-infos {
+  margin-bottom: .7rem;
+}
+
 
 .footer {
   text-align: center;

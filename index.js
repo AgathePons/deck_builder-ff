@@ -14,6 +14,12 @@ app.use(express.static('public'));
 
 app.use(router);
 
+app.use((req, res) => {
+  res.status(404).render('notFound', {
+    title: '404 not found'
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Listening on ${PORT}`);
 });

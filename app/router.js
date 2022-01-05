@@ -8,6 +8,7 @@ const searchController = require('./controllers/searchController');
 router.get('/', mainController.homePage);
 router.get('/card/:id', mainController.cardDetail);
 router.get('/search', searchController.searchPage);
+router.get('/search/element/', searchController.searchResult);
 
 
 

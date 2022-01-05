@@ -10,15 +10,13 @@ const mainController = {
       res.render('cardList', {
         cards: results.rows,
         title: 'Liste des cartes'
-      })
+      });
     });
   },
   cardDetail: async (req, res, next) => {
     const id = req.params.id;
     try {
       const card = await dataMapper.getOneCard(id);
-      //! log
-      console.log(card);
       if(card) {
         res.render('cardDetail', {
           card,

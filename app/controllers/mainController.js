@@ -7,6 +7,8 @@ const mainController = {
         console.error(err);
         return;
       } 
+      //! log
+      //console.log(results.rows);
       res.render('cardList', {
         cards: results.rows,
         title: 'Liste des cartes'

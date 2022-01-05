@@ -1,4 +1,5 @@
 const express = require('express');
+const deckController = require('./controllers/deckController');
 const router = express.Router();
 
 const mainController = require('./controllers/mainController');
@@ -9,6 +10,10 @@ router.get('/', mainController.homePage);
 router.get('/card/:id', mainController.cardDetail);
 router.get('/search', searchController.searchPage);
 router.get('/search/element/', searchController.searchResult);
+
+router.use('/deck', deckController.checkDeckSet);
+router.get('/deck', deckController.deckPage);
+router.get('/deck/add/:id', deckController.addToDeck);
 
 
 

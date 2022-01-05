@@ -27,6 +27,12 @@ const dataMapper = {
     console.log('query:', query);
     return (await database.query(query)).rows;
   },
+  getCardsByLevel: async (level) => {
+    const query = {
+      text: `SELECT * FROM "card" WHERE level=${Number(level)}`
+    };
+    return (await database.query(query)).rows;
+  }
 };
 
 

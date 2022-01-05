@@ -39,6 +39,41 @@ const searchController = {
       console.error('hmm, an error occured:', error);
       res.status(500).send('Oops!');
     }
+  },
+  searchByValues: async (req, res) => {
+    const direction = req.query.direction;
+    const value = req.query.value;
+    try {
+      const cards = await dataMapper.getCardsByValues(direction, value);
+      if(cards) {
+        res.render('cardList', {
+          cards,
+          title: 'Résultat de la recherche'
+        });
+      } else {
+        res.render('search');
+      }
+    } catch(error) {
+      console.error('hmm, an error occured:', error);
+      res.status(500).send('Oops!');
+    }
+  },
+  searchByName: async (req, res) => {
+    const name = req.query.name;
+    try {
+      const cards = await dataMapper.getCardsByname(name);
+      if(cards) {
+        res.render('cardList', {
+          cards,
+          title: 'Résultat de la recherche'
+        });
+      } else {
+        res.render('search');
+      }
+    } catch(error) {
+      console.error('hmm, an error occured:', error);
+      res.status(500).send('Oops!');
+    }
   }
 };
 

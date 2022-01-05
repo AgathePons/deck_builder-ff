@@ -32,6 +32,18 @@ const dataMapper = {
       text: `SELECT * FROM "card" WHERE level=${Number(level)}`
     };
     return (await database.query(query)).rows;
+  },
+  getCardsByValues: async (direction, value) => {
+    const query = {
+      text: `SELECT * FROM "card" WHERE value_${direction}>=${value}`
+    };
+    return (await database.query(query)).rows;
+  },
+  getCardsByname: async (name) => {
+    const query = {
+      text: `SELECT * FROM "card" WHERE name LIKE '%${name}%'`
+    };
+    return (await database.query(query)).rows;
   }
 };
 

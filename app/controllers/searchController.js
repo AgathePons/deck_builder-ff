@@ -4,10 +4,10 @@ const searchController = {
   searchPage: (_req, res) => {
     res.render('search');
   },
-  searchResult: async (req, res, next) => {
+  searchResult: async (req, res) => {
     const element = req.query.element;
     //! log
-    console.log(element);
+    console.log(req.query);
     try {
       const cards = await dataMapper.getCardsByElement(element);
       if(cards) {

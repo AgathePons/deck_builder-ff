@@ -74,6 +74,15 @@
   text-decoration: none;
 }
 
+.card .link--removeCard {
+  position: absolute;
+  top: 20%;
+  right: 23%;
+  color: darkblue;
+  font-weight: 900;
+  text-decoration: none;
+}
+
 .one-card {
   flex-wrap: wrap;
 }

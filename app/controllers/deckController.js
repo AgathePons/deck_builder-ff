@@ -30,6 +30,11 @@ const deckController = {
       }
     }
     res.redirect('/deck');
+  },
+  removeFromDeck: (req, res) => {
+    const id = req.params.id;
+    req.session.deck = req.session.deck.filter(card => card.id !== Number(id));
+    res.redirect('/deck');
   }
 };
 

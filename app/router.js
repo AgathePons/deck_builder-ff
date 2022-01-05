@@ -14,7 +14,7 @@ router.get('/search/element/', searchController.searchResult);
 router.use('/deck', deckController.checkDeckSet);
 router.get('/deck', deckController.deckPage);
 router.get('/deck/add/:id', deckController.addToDeck);
-
+router.get('/deck/remove/:id', deckController.removeFromDeck);
 
 
 module.exports = router;

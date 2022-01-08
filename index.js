@@ -13,7 +13,7 @@ app.set('views', 'app/views');
 
 app.use(session({
   // doc express-session : npmjs.com/package/express-session
-  secret: 'MonSup3rS!t3d3F!gur!nes',
+  secret: 'MonSup3rS!t3d3J3ud3C4rt3s',
   resave: true,
   saveUninitialized: true,
   cookie : {

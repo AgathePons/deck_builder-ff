@@ -5,6 +5,7 @@ const deckController = {
     if(!req.session.deck) {
       req.session.deck = [];
     }
+    //! log
     console.log(req.session.deck);
     next();
   },
@@ -16,14 +17,17 @@ const deckController = {
   },
   addToDeck: async (req, res) => {
     const id = req.params.id;
-    // check if card already
+    // check if card already in deck
     const cardInDeck = req.session.deck.find(card => {
       return card.id === Number(id);
     });
     if(!cardInDeck && req.session.deck.length < 5) {
       try {
         const card = await dataMapper.getOneCard(id);
-        req.session.deck.push(card);
+        if(card) { // check if card exists (!==undefined)
+          req.session.deck.push(card);
+        }
+        
       } catch(error) {
         console.error('hmm, an error occured:', error);
         res.status(500).send('Oops!');

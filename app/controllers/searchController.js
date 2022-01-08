@@ -13,7 +13,7 @@ const searchController = {
       if(cards) {
         res.render('cardList', {
           cards,
-          title: 'Résultat de la recherche'
+          title: 'Liste des cartes' + (element === 'null' ? ' sans élément' : `d'élément ${element}`)
         });
       } else {
         res.render('search');

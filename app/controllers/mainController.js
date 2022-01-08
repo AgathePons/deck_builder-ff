@@ -28,8 +28,8 @@ const mainController = {
         next();
       }
     } catch(error) {
-      console.error('hmm, an error occured:', error);
-      res.status(500).send('Oops!');
+      console.error('Error:', error);
+      res.status(500).send(error);
     }
   }
 };
